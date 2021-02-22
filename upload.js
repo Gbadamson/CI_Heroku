@@ -19,7 +19,8 @@ const imgUp = multer({ storage: stocker });
 // lev.post('/imgsin', imgUp.single("avatar"), (req, res)=>{
 //     res.status(201).send("Image posted Successfully")
 // })
-
+lev.use(express.json());
+lev.use("need.html");
 lev.post("/imgmult", imgUp.array("avatar", 12), (req, res) => {
   res.status(201).send("All Images posted successfully");
   console.log("Image has been successfully posted");
